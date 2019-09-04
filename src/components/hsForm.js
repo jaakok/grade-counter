@@ -2,46 +2,42 @@ import React, { useState } from 'react'
 
 const HSForm = () => {
 
-  const [hsValues, sethsValues] = useState([])
+  const [grade, setGrade] = useState('')
+
+  const grades = ['l', 'e', 'm', 'c', 'b', 'a']
 
   const handleHsForm = (event) => {
     event.preventDefault()
+    console.log(event.target.value)
   }
 
-  const handleRadioChange = (event) => {
-    setState({
-      selectedOption: event.target.value
-    })
+  const handleRadio = (event) => {
+    console.log(event.target.value)
+    setGrade(event.target.value)
+    console.log(grade)
   }
 
   return (
     <div>
       <form onSubmit={handleHsForm}>
-        <label>
-          <input
-            type='radio'
-            value={hsValues}
-            onChange={handleRadioChange}
-          />
-        Option 1
-        </label>
-        <label>
-          <input
-            type='radio'
-            value={hsValues}
-            onChange={handleRadioChange}
-          />
-        Option 2
-        </label>
-        <label>
-          <input
-            type='radio'
-            value={hsValues}
-            onChange={handleRadioChange}
-          />
-        Option 3
-        </label>
-      </form>
+        {
+          grades.map(g => {
+          return (
+            <label key={g}>
+              <input
+                key={'key ' + g}
+                type='radio'
+                value={g}
+                checked={grade === g}
+                onChange={handleRadio}
+              />
+              {g.toUpperCase()}
+            </label>
+          )
+        })
+      }
+      <button type='submit'>Submit</button>
+    </form>
     </div>
   )
 }
