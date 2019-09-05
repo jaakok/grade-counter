@@ -13,9 +13,8 @@ const Voc = () => {
 
   return (
     <div>
-      <h2>Hello I'm vocational studies</h2>
       <button onClick={handleClick}>
-        Click me to reveal stuff
+        Ammattikoulu
       </button>
       {showComp ?
         <VocForm />

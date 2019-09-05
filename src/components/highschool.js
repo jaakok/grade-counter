@@ -13,9 +13,8 @@ const HighSchool = () => {
 
   return (
     <div>
-      <h2>Hello I'm high school studies</h2>
       <button onClick={handleClick}>
-        Click me to reveal stuff
+        Lukio
       </button>
       {showComp ?
         <HSForm />
