@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import score from './hsScoreTable'
 
 const HSForm = () => {
 
@@ -8,34 +9,44 @@ const HSForm = () => {
 
   const handleHsForm = (event) => {
     event.preventDefault()
-    console.log(event.target.value)
+    console.log(grade)
   }
 
   const handleRadio = (event) => {
-    console.log(event.target.value)
     setGrade(event.target.value)
-    console.log(grade)
+  }
+
+  const addNewField = (event) => {
+    event.preventDefault()
+    console.log('hi')
   }
 
   return (
     <div>
       <form onSubmit={handleHsForm}>
-        {
-          grades.map(g => {
-          return (
-            <label key={g}>
-              <input
-                key={'key ' + g}
-                type='radio'
-                value={g}
-                checked={grade === g}
-                onChange={handleRadio}
-              />
-              {g.toUpperCase()}
-            </label>
-          )
-        })
-      }
+        <div>
+          <label htmlFor='grade'>{score[0].name}</label>
+          {
+            grades.map(g => {
+            return (
+              <label key={g}>
+                <input
+                  key={'key ' + g}
+                  type='radio'
+                  value={g}
+                  checked={grade === g}
+                  onChange={handleRadio}
+                  name='grade'
+                />
+                {g.toUpperCase()}
+              </label>
+            )
+          })
+        }
+        </div>
+        <div>
+          <button onClick={addNewField}>Add new</button>
+        </div>
       <button type='submit'>Submit</button>
     </form>
     </div>
