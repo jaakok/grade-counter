@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import { Form, Select, Scope} from '@rocketseat/unform'
-import score from './hsScoreTable'
+import {score, grades} from './hsScoreTable'
+import count from './hsFormLogic'
 
 const FormField = () => {
   return (
     <>
     <Scope path={Math.random()}>
+      <label>
+      Aine
       <Select name='name' options={score} />
-      <Select name='grade' options={[
-        { id: 'L', title: 'L'},
-        { id: 'M', title: 'M'},
-        { id: 'E', title: 'E'},
-        { id: 'C', title: 'C'},
-        { id: 'B', title: 'B'},
-        { id: 'A', title: 'A'}
-      ]} />
+      </label>
+      <label>
+      Arvosana
+      <Select name='grade' options={grades} />
+      </label>
     </Scope>
     <br/>
     </>
@@ -26,13 +26,13 @@ const HSForm = () => {
   const [children, setChildren] = useState([])
 
   const handleSubmit = data => {
-    console.log(data)
+    console.log('submitted!')
+    count(data)
   }
 
   const handleClick = event => {
     event.preventDefault()
     setChildren([...children, <FormField/>])
-    console.log(children)
   }
 
   const remove = event => {
@@ -43,16 +43,9 @@ const HSForm = () => {
   return(
     <div>
       <Form onSubmit={handleSubmit}>
-        <Scope path={Math.random()}>
-            <Select name='name' options={score} />
-            <Select name='grade' options={[
-              { id: 'L', title: 'L'},
-              { id: 'M', title: 'M'},
-              { id: 'E', title: 'E'},
-              { id: 'C', title: 'C'},
-              { id: 'B', title: 'B'},
-              { id: 'A', title: 'A'}
-            ]} />
+        <Scope path='fin'>
+            <label>Äidinkieli</label>
+            <Select name='grade' options={grades} />
           </Scope>
           <br/>
         {children.map(child => child)}
