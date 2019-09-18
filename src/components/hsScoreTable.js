@@ -1,10 +1,10 @@
 const grades = [
-  { id: 'L', title: 'L'},
-  { id: 'M', title: 'M'},
-  { id: 'E', title: 'E'},
-  { id: 'C', title: 'C'},
-  { id: 'B', title: 'B'},
-  { id: 'A', title: 'A'}
+  { id: 'L', title: 'L', index: 0},
+  { id: 'M', title: 'M', index: 1},
+  { id: 'E', title: 'E', index: 2},
+  { id: 'C', title: 'C', index: 3},
+  { id: 'B', title: 'B', index: 4},
+  { id: 'A', title: 'A', index: 5}
 ]
 
 const score = [
