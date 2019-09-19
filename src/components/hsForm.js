@@ -23,11 +23,13 @@ const FormField = () => {
 
 const HSForm = () => {
 
+  const [totalS, setTotalS] = useState('')
+
   const [children, setChildren] = useState([])
 
   const handleSubmit = data => {
     console.log('submitted!')
-    count(data)
+    count({data, totalS, setTotalS})
   }
 
   const add = event => {
@@ -53,6 +55,7 @@ const HSForm = () => {
         <button onClick={remove}>Remove Latest</button>
         <button type='submit'>Submit</button>
       </Form>
+      <Results total={[totalS]}/>
     </div>
   )
 }
