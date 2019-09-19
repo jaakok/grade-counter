@@ -4,7 +4,6 @@ import Index from './components/Index'
 import Voc from './components/vocational'
 import HSForm from './components/hsForm'
 
-
 const App = () => {
   return (
     <Router>
