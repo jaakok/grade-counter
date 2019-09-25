@@ -3,17 +3,17 @@ import {score, grades} from './hsScoreTable'
 
 const count = ({data, totalS, setTotalS}) => {
 
-  //Match input grade with index of grade table
-  const grade = grades.filter(g => g.id === data.mathLong.grade)
+  const dataArray = Object.keys(data).map(key => data[key])
 
-  //Store indexed value in new variable
-  const index = grade[0].index
+  const indexed = dataArray.flatMap(d => score.filter(s => s.scores === d.grade.toLowerCase()))
+
+  console.log(indexed)
 
   //Find correct subject from score table
   //Match grade score with grade table index value
   const total = score
-    .filter(s => s.id === data.mathLong.name)
-    .map(s => s.scores[index])
+    .filter(s => s.id === data[0].name)
+    .map(s => s.scores[0])
 
   console.log(total)
   setTotalS(total)

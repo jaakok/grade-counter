@@ -3,10 +3,11 @@ import { Form, Select, Scope } from '@rocketseat/unform'
 import Results, { count } from './Results'
 import {score, grades} from './hsScoreTable'
 
-const FormField = () => {
+const FormField = ({props}) => {
+  console.log(props)
   return (
     <>
-    <Scope path='mathLong'>
+    <Scope path={props.length}>
       <label>
       Aine
       <Select name='name' options={score} />
@@ -34,7 +35,7 @@ const HSForm = () => {
 
   const add = event => {
     event.preventDefault()
-    setChildren([...children, <FormField/>])
+    setChildren([...children, <FormField props={children}/>])
   }
 
   const remove = event => {
