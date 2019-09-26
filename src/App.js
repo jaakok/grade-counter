@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Index from './components/Index'
+import Front from './components/Front'
 import Voc from './components/vocational'
 import HSForm from './components/hsForm'
 
@@ -21,7 +21,7 @@ const App = () => {
             </li>
           </ul>
         </nav>
-        <Route path='/' exact component={Index} />
+        <Route path='/' exact component={Front} />
         <Route path='/ammattikoulu/' component={Voc}/>
         <Route path='/lukio/' component={HSForm }/>
       </div>

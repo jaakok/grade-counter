@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Index = () => {
+const Front = () => {
   return(
     <div>
       <h2>Toisen asteen koulutuksen pistelaskuri</h2>
@@ -9,4 +9,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Front

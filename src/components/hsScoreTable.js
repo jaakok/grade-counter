@@ -11,7 +11,8 @@ const score = [
   {
     id: 'mathLong',
     title: 'Matematiikka (Pitkä)',
-    scores: {l: 46, m: 43, e: 40, c: 35, b: 27, a: 19}
+    scores: [46, 43, 40, 35, 27, 19],
+    grade: null
   },
   {
     id: 'mathShort',
