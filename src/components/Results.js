@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {score, grades} from './hsScoreTable'
 
 const count = ({data, totalS, setTotalS}) => {
@@ -8,26 +8,24 @@ const count = ({data, totalS, setTotalS}) => {
 
   //Match input values with score table entries
   const matched = dataArray.flatMap(d => {
-    let match = score.filter(s => s.id === d.name)
-    console.log(d.grade)
-    match = {...match, grade: d.grade}
+
+    //Create an index value based on the input grade
+    const index = grades.filter(g => g.id === d.grade)
+
+    //Filter input subjects from score table
+    //And return only indexed score value
+    const match = score
+      .filter(s => s.id === d.name)
+      .map(s => s.scores[index[0].index])
+
+    //Return matched score value
     return match
   })
 
-  console.log(dataArray)
   console.log(matched)
 
-  //Match input grades with score table scores
-  function matchBy(id, grade) {
-    const index = grades.filter(g => g.id === grade)
-    index.map(i => i.index)
-    score.filter(s => s.id === id)
-  }
 
-  console.log(matched.map(m => matchBy(m.id, m.grade)))
-  console.log(score.filter(s => s.id === 'mathLong').map(s => s.scores[0]))
-
-  setTotalS()
+  setTotalS(matched.reduce((a, b) => a + b, 0))
 }
 
 const Results = (totalS) => {
