@@ -41,6 +41,7 @@ const FormFields = () => {
 
 return (
   <div>
+    <p>Valitse ensin pisteytysjärjestelmä (joko 1-3 tai 1-5)</p>
     <button onClick={selectGrading}>Pisteytysjärjestelmä: {
       gradeSys
         ? '1-3'

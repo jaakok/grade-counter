@@ -4,7 +4,8 @@ const Front = () => {
   return(
     <div>
       <h2>Toisen asteen koulutuksen pistelaskuri</h2>
-      <p>Tähän mahdollisesti ohjeita laskurin käyttöön</p>
+      <p>Aloittaaksesi laskurin käytön valitse joko ammatillinen perustutkinto tai
+      ylioppilastutkinto</p>
     </div>
   )
 }
