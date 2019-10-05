@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {score, grades} from './hsScoreTable'
+import {score, grades} from './highSchool/hsScoreTable'
 
 const count = ({data, totalS, setTotalS}) => {
 

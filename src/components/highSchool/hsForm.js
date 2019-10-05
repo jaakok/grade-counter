@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Select, Scope } from '@rocketseat/unform'
-import Results, { count } from './Results'
+import Results, { count } from '../Results'
 import {score, grades} from './hsScoreTable'
 
 const FormField = ({props}) => {

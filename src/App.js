@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Front from './components/Front'
-import VocForm from './components/vocForm'
-import HSForm from './components/hsForm'
+import VocForm from './components/vocational/vocForm'
+import HSForm from './components/highSchool/hsForm'
 
 const App = () => {
   return (
