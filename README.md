@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Grade counter
 
-This app will be used as a part of an info site for applying to universities of applied sciences in Finland.
+This app will be used as a part of an info site for applying to universities of applied sciences in Finland. The app is still under development and will eventually be part of [ammattikorkeakouluun.fi](https://ammattikorkeakouluun.fi)
 
 The purpose of the app is to count the possible entry level points for people applying to an UAS based on their high school grades
 
