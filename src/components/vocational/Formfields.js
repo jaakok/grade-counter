@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Select, Scope, Input } from '@rocketseat/unform'
 
-const FormFields = () => {
-
-  const [gradeSys, setGradeSys] = useState(false)
+const FormFields = ({gradeSys, setGradeSys}) => {
   const [error, setError] = useState(false)
 
   const grades3 = [
@@ -28,7 +26,7 @@ const FormFields = () => {
   }
 
   const validateInput = (event) => {
-    const regex = /^[a-zA-Z]+$/
+    const regex = /^[a-zA-z]+$/
 
     if (event.target.value.match(regex)) {
       event.preventDefault()

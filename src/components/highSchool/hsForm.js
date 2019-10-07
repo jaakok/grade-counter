@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Select, Scope } from '@rocketseat/unform'
-import Results, { count } from '../Results'
+import Results from '../Results'
+import { count } from './formHandler'
 import {score, grades} from './hsScoreTable'
 
 const FormField = ({props}) => {
@@ -22,9 +23,7 @@ const FormField = ({props}) => {
   )
 }
 
-const HSForm = () => {
-
-  const [totalS, setTotalS] = useState('')
+const HSForm = ({totalS, setTotalS}) => {
 
   const [children, setChildren] = useState([])
 
@@ -56,7 +55,7 @@ const HSForm = () => {
         <button onClick={remove}>Remove Latest</button>
         <button type='submit'>Submit</button>
       </Form>
-      <Results total={[totalS]}/>
+      <Results total={totalS}/>
     </div>
   )
 }
