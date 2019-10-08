@@ -9,6 +9,12 @@ const grades = [
 
 const score = [
   {
+    id: 'fin',
+    title: 'Äidinkieli',
+    scores: [46, 41, 34, 26, 18, 10],
+    grade: null
+  },
+  {
     id: 'mathLong',
     title: 'Matematiikka (Pitkä)',
     scores: [46, 43, 40, 35, 27, 19],

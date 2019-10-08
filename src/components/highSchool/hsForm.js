@@ -45,11 +45,6 @@ const HSForm = ({totalS, setTotalS}) => {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Scope path='fin'>
-          <label>Äidinkieli</label>
-          <Select name='grade' options={grades} />
-        </Scope>
-        <br/>
         {children.map(child => child)}
         <button onClick={add}>Add field</button>
         <button onClick={remove}>Remove Latest</button>

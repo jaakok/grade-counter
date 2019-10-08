@@ -21,7 +21,6 @@ const count = ({data, setTotalS}) => {
     return match
   })
 
-  console.log(matched)
   const total = matched.reduce((a, b) => a + b, 0)
   console.log(total)
   setTotalS(total)
