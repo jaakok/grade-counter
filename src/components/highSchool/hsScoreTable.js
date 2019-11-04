@@ -7,38 +7,55 @@ const grades = [
   { id: 'A', title: 'A', index: 5}
 ]
 
-const score = [
-  {
-    id: 'fin',
-    title: 'Äidinkieli',
-    scores: [46, 41, 34, 26, 18, 10],
-    grade: null
-  },
+const math = [
   {
     id: 'mathLong',
-    title: 'Matematiikka (Pitkä)',
+    title: 'Pitkä',
     scores: [46, 43, 40, 35, 27, 19],
     grade: null
   },
   {
     id: 'mathShort',
-    title: 'Matematiikka (Lyhyt)',
+    title: 'Lyhyt',
     scores: [40, 35, 27, 19, 13, 6]
   },
+]
+
+const fin = [
+  {
+    id: 'fin',
+    title: 'Äidinkieli',
+    scores: [46, 41, 34, 26, 18, 10],
+    grade: null
+  }
+]
+
+const score = [
+
   {
     id: 'secondLangLong',
-    title: 'Toinen kotimainen/Vieras kieli (Pitkä)',
+    title: 'Toinen kotimainen kieli (Pitkä)',
     scores: [46, 41, 34, 26, 18, 10]
   },
   {
     id: 'secondLangMed',
-    title: 'Toinen kotimainen/Vieras kieli (Keskipitkä)',
+    title: 'Toinen kotimainen kieli (Keskipitkä)',
     scores: [38, 34, 26, 18, 12, 5]
   },
   {
     id: 'secondLangShort',
-    title: 'Toinen kotimainen/Vieras kieli (Lyhyt)',
+    title: 'Toinen kotimainen kieli (Lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
+  },
+  {
+    id: 'forLangLong',
+    title: 'Vieras kieli (Pitkä)',
+    scores: [46, 41, 34, 26, 18, 10]
+  },
+  {
+    id: 'forLangShort',
+    title: 'Vieras kieli (Lyhyt)',
+    scores: [46, 41, 34, 26, 18, 10]
   },
   {
     id: 'phys',
@@ -97,4 +114,4 @@ const score = [
   }
 ]
 
-export {score, grades}
+export {score, grades, math}

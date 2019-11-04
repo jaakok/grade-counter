@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Form, Select, Scope } from '@rocketseat/unform'
-import Results from '../Results'
-import { count } from './formHandler'
-import {score, grades} from './hsScoreTable'
+import Results from './Results'
+import count from './formHandler'
+import {score, grades, math} from './hsScoreTable'
 
 const FormField = ({props}) => {
   console.log(props)
@@ -23,13 +23,14 @@ const FormField = ({props}) => {
   )
 }
 
-const HSForm = ({totalS, setTotalS}) => {
+const HSForm = () => {
 
   const [children, setChildren] = useState([])
+  const [totalS, setTotalS] = useState('')
 
   const handleSubmit = data => {
     console.log('submitted!')
-    count({data, totalS, setTotalS})
+    count({data, setTotalS})
   }
 
   const add = event => {
@@ -45,10 +46,46 @@ const HSForm = ({totalS, setTotalS}) => {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        {children.map(child => child)}
-        <button onClick={add}>Add field</button>
-        <button onClick={remove}>Remove Latest</button>
-        <button type='submit'>Submit</button>
+        <Scope path='fin'>
+          <label>
+          Äidinkieli
+          </label>
+          <label>
+          Arvosana
+          <Select name='grade' options={grades} />
+          </label>
+        </Scope>
+        <br/>
+
+        <Scope path='math'>
+          <label>
+          Matematiikka
+          <Select name='name' options={math} />
+          </label>
+          <label>
+          Arvosana
+          <Select name='grade' options={grades} />
+          </label>
+        </Scope>
+        <br/>
+
+        <Scope path='foreign'>
+          <label>
+          Vieras kieli / Toinen kotimainen kieli 
+          </label>
+          <label>
+          Arvosana
+          <Select name='grade' options={grades} />
+          </label>
+        </Scope>
+        <br/>
+
+        <p>Lisää ainereaaleja</p>
+          {children.map(child => child)}
+          <button onClick={add}>Lisää aine</button>
+          <button onClick={remove}>Poista viimeisin kenttä</button>
+        <br/>
+        <button type='submit'>Laske</button>
       </Form>
       <Results total={totalS}/>
     </div>

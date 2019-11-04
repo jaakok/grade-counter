@@ -21,9 +21,12 @@ const count = ({data, setTotalS}) => {
     return match
   })
 
-  const total = matched.reduce((a, b) => a + b, 0)
-  console.log(total)
+  const total = matched
+    .sort((a,b) => b-a)
+    .slice(0, 5)
+    .reduce((a, b) => a + b, 0)
+
   setTotalS(total)
 }
 
-export {count}
+export default count

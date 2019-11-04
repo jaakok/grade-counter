@@ -10,8 +10,8 @@ const VocForm = () => {
   const [gradeSys, setGradeSys] = useState(false)
 
   const handleSubmit = data => {
-    console.log(data)
-    count({data, totalS, setTotalS, gradeSys})
+    console.log('submitted!')
+    count({data, setTotalS, gradeSys})
   }
 
   return (

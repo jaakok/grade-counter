@@ -39,8 +39,8 @@ const FormFields = ({gradeSys, setGradeSys}) => {
 
 return (
   <div>
-    <p>Valitse ensin pisteytysjärjestelmä (joko 1-3 tai 1-5)</p>
-    <button onClick={selectGrading}>Pisteytysjärjestelmä: {
+    <p>Valitse ensin arvosana-asteikko klikkaamalla (joko 1-3 tai 1-5)</p>
+    <button onClick={selectGrading}>Arvosana-asteikko: {
       gradeSys
         ? '1-3'
         : '1-5'
@@ -75,8 +75,8 @@ return (
       </Scope>
     <br/>
     <Scope path='avg'>
-      <label>Tutkinnon arvosanat pilkuilla erotettuna</label>
-      <Input name='grades' type='text' onKeyPress={validateInput}/>
+      <label>Tutkinnon painotettu keskiarvo</label>
+      <Input name='avg' type='text' onKeyPress={validateInput}/>
     </Scope>
     <p className={error ? 'error' : null}>{error ? 'Käytä vain numeroita ja pilkkuja' : ''}</p>
     <br />
