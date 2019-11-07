@@ -1,9 +1,11 @@
-import {score, grades} from './hsScoreTable'
+import {grades, totalScores} from './hsScoreTable'
 
-const count = ({data, setTotalS}) => {
+const count = ({data, setTotal}) => {
 
   //Turn unform data object into an array
   const dataArray = Object.keys(data).map(key => data[key])
+
+  console.log(dataArray)
 
   //Match input values with score table entries
   const matched = dataArray.flatMap(d => {
@@ -13,7 +15,7 @@ const count = ({data, setTotalS}) => {
 
     //Filter input subjects from score table
     //And return only indexed score value
-    const match = score
+    const match = totalScores
       .filter(s => s.id === d.name)
       .map(s => s.scores[index[0].index])
 
@@ -21,12 +23,13 @@ const count = ({data, setTotalS}) => {
     return match
   })
 
+  //Sort top 5 values and sum them
   const total = matched
     .sort((a,b) => b-a)
     .slice(0, 5)
     .reduce((a, b) => a + b, 0)
 
-  setTotalS(total)
+  setTotal(total)
 }
 
 export default count

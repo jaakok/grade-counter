@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Form, Select, Scope } from '@rocketseat/unform'
+import { Form, Select, Scope, Input } from '@rocketseat/unform'
 import Results from './Results'
 import count from './formHandler'
-import {score, grades, math} from './hsScoreTable'
+import {score, grades, math, forLang} from './hsScoreTable'
 
 const FormField = ({props}) => {
   console.log(props)
@@ -26,11 +26,11 @@ const FormField = ({props}) => {
 const HSForm = () => {
 
   const [children, setChildren] = useState([])
-  const [totalS, setTotalS] = useState('')
+  const [totalS, setTotal] = useState('')
 
   const handleSubmit = data => {
     console.log('submitted!')
-    count({data, setTotalS})
+    count({data, setTotal})
   }
 
   const add = event => {
@@ -50,6 +50,7 @@ const HSForm = () => {
           <label>
           Äidinkieli
           </label>
+          <Input readOnly={true} style={{display: 'none'}} name='name' value='fin'/>
           <label>
           Arvosana
           <Select name='grade' options={grades} />
@@ -71,8 +72,9 @@ const HSForm = () => {
 
         <Scope path='foreign'>
           <label>
-          Vieras kieli / Toinen kotimainen kieli 
+          Vieras kieli / Toinen kotimainen kieli
           </label>
+          <Select name='name' options={forLang} />
           <label>
           Arvosana
           <Select name='grade' options={grades} />
@@ -87,7 +89,7 @@ const HSForm = () => {
         <br/>
         <button type='submit'>Laske</button>
       </Form>
-      <Results total={totalS}/>
+      <Results totalS={totalS}/>
     </div>
   )
 }
