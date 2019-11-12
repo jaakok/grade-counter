@@ -1,11 +1,9 @@
 import {grades, totalScores} from './hsScoreTable'
 
-const count = ({data, setTotal}) => {
+const count = ({data, setTotal, title, setTitle}) => {
 
   //Turn unform data object into an array
   const dataArray = Object.keys(data).map(key => data[key])
-
-  console.log(dataArray)
 
   //Match input values with score table entries
   const matched = dataArray.flatMap(d => {
@@ -17,10 +15,15 @@ const count = ({data, setTotal}) => {
     //And return only indexed score value
     const match = totalScores
       .filter(s => s.id === d.name)
-      .map(s => s.scores[index[0].index])
+
+    const score = match.map(m => m.scores[index[0].index])
+    const foundTitle = match.map(m => m.title)
+    title.push(`${foundTitle} ${score}`)
+    setTitle(title)
+    console.log(foundTitle, score)
 
     //Return matched score value
-    return match
+    return score
   })
 
   //Sort top 5 values and sum them

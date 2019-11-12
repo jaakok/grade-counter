@@ -21,7 +21,7 @@ const math = [
   {
     id: 'null',
     title: 'Ei suoritettu',
-    scores: [0]
+    scores: [0, 0, 0, 0, 0, 0]
   }
 ]
 

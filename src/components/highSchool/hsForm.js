@@ -27,10 +27,11 @@ const HSForm = () => {
 
   const [children, setChildren] = useState([])
   const [totalS, setTotal] = useState('')
+  const [title, setTitle] = useState([])
 
   const handleSubmit = data => {
     console.log('submitted!')
-    count({data, setTotal})
+    count({data, setTotal, title, setTitle})
   }
 
   const add = event => {
@@ -42,6 +43,8 @@ const HSForm = () => {
     event.preventDefault()
     setChildren(children.slice(0, -1))
   }
+
+  console.log(title)
 
   return (
     <div>
@@ -89,7 +92,7 @@ const HSForm = () => {
         <br/>
         <button type='submit'>Laske</button>
       </Form>
-      <Results totalS={totalS}/>
+      <Results totalS={totalS} title={title}/>
     </div>
   )
 }
