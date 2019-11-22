@@ -5,7 +5,7 @@ const Results = ({totalS, title}) => {
   return (
     <div>
       <h3>Kokonaispisteet</h3>
-      <p>Pisteet: {totalS}</p>
+      <p>{totalS}</p>
       {
         title.map(t => <p>{t}</p>)
       }

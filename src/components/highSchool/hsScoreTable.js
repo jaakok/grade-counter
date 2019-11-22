@@ -10,27 +10,18 @@ const grades = [
 const math = [
   {
     id: 'mathLong',
-    title: 'Pitkä',
+    title: 'Pitkä Matematiikka',
     scores: [46, 43, 40, 35, 27, 19]
   },
   {
     id: 'mathShort',
-    title: 'Lyhyt',
+    title: 'Lyhyt Matematiikka',
     scores: [40, 35, 27, 19, 13, 6]
   },
   {
     id: 'null',
     title: 'Ei suoritettu',
     scores: [0, 0, 0, 0, 0, 0]
-  }
-]
-
-const fin = [
-  {
-    id: 'fin',
-    title: 'Äidinkieli',
-    scores: [46, 41, 34, 26, 18, 10],
-    grade: null
   }
 ]
 
@@ -123,12 +114,12 @@ const score = [
 const totalScores = [
   {
     id: 'mathLong',
-    title: 'Pitkä',
+    title: 'Pitkä Matematiikka',
     scores: [46, 43, 40, 35, 27, 19]
   },
   {
     id: 'mathShort',
-    title: 'Lyhyt',
+    title: 'Lyhyt Matematiikka',
     scores: [40, 35, 27, 19, 13, 6]
   },
   {

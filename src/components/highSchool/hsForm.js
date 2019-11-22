@@ -11,7 +11,7 @@ const FormField = ({props}) => {
     <Scope path={props.length}>
       <label>
       Aine
-      <Select name='name' options={score} />
+      <Select name='name' options={score}/>
       </label>
       <label>
       Arvosana
@@ -30,8 +30,11 @@ const HSForm = () => {
   const [title, setTitle] = useState([])
 
   const handleSubmit = data => {
+
     console.log('submitted!')
-    count({data, setTotal, title, setTitle})
+    Boolean(data.fin.grade)
+    ? count({data, setTotal, title, setTitle})
+    : setTotal('Valitse arvosanat')
   }
 
   const add = event => {
@@ -43,8 +46,6 @@ const HSForm = () => {
     event.preventDefault()
     setChildren(children.slice(0, -1))
   }
-
-  console.log(title)
 
   return (
     <div>

@@ -32,7 +32,7 @@ const count = ({data, setTotal, title, setTitle}) => {
     .slice(0, 5)
     .reduce((a, b) => a + b, 0)
 
-  setTotal(total)
+  setTotal(`Pisteet: ${total}`)
 }
 
 export default count
