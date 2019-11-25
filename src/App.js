@@ -15,10 +15,10 @@ const App = () => {
               <Link to='/'>Alku</Link>
             </li>
             <li>
-              <Link to='/ammatillinen/'>Ammatillinen perustutkinto</Link>
-            </li>
-            <li>
               <Link to='/ylioppilas/'>Ylioppilastutkinto</Link>
+            </li> 
+            <li>
+              <Link to='/ammatillinen/'>Ammatillinen perustutkinto</Link>
             </li>
           </ul>
         </nav>

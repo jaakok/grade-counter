@@ -1,6 +1,8 @@
 import {grades, totalScores} from './hsScoreTable'
 
 const count = ({data, setTotal, title, setTitle}) => {
+  //Set title array to an empty array to avoid duplication
+  title.splice(0,title.length)
 
   //Turn unform data object into an array
   const dataArray = Object.keys(data).map(key => data[key])
@@ -12,15 +14,22 @@ const count = ({data, setTotal, title, setTitle}) => {
     const index = grades.filter(g => g.id === d.grade)
 
     //Filter input subjects from score table
-    //And return only indexed score value
     const match = totalScores
       .filter(s => s.id === d.name)
 
-    const score = match.map(m => m.scores[index[0].index])
+    //Return score value of found subjects
+    console.log(index)
+    const score = match.map(m => {
+      return !!(index[0])
+      ? m.scores[index[0].index]
+      : 0
+    })
+
+    //Return title of found subjects
+    //And push to title array
     const foundTitle = match.map(m => m.title)
     title.push(`${foundTitle} ${score}`)
     setTitle(title)
-    console.log(foundTitle, score)
 
     //Return matched score value
     return score

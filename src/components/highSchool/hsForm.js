@@ -32,7 +32,7 @@ const HSForm = () => {
   const handleSubmit = data => {
 
     console.log('submitted!')
-    Boolean(data.fin.grade)
+    !!(data.fin.grade)
     ? count({data, setTotal, title, setTitle})
     : setTotal('Valitse arvosanat')
   }

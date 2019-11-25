@@ -46,7 +46,7 @@ return (
         : '1-5'
       }
     </button>
-    <br />
+    <br/>
     <Scope path='comm'>
       <label>Viestintä- ja vuorovaikutusosaaminen</label>
       <Select name='grade' options={
@@ -55,7 +55,7 @@ return (
           : grades5
         } />
       </Scope>
-    <br />
+    <br/>
       <Scope path='math'>
         <label>Matemaattis-luonnontieteellinen osaaminen</label>
         <Select name='grade' options={
@@ -64,7 +64,7 @@ return (
             : grades5
           } />
       </Scope>
-    <br />
+    <br/>
       <Scope path='soc'>
         <label>Yhteiskunta- ja työelämäosaaminen</label>
         <Select name='grade' options={

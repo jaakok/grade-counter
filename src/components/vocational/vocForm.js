@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form } from '@rocketseat/unform'
 import FormFields from './Formfields'
-import count from './formHandler'
+import { count, validate } from './formHandler'
 import Results from '../Results'
 
 const VocForm = () => {
@@ -10,7 +10,6 @@ const VocForm = () => {
   const [gradeSys, setGradeSys] = useState(false)
 
   const handleSubmit = data => {
-    console.log('submitted!')
     count({data, setTotalS, gradeSys})
   }
 
