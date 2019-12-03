@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form } from '@rocketseat/unform'
 import FormFields from './Formfields'
-import { count, validate } from './formHandler'
+import { count } from './formHandler'
 import Results from '../Results'
 
 const VocForm = () => {
@@ -17,7 +17,7 @@ const VocForm = () => {
     <div>
       <Form onSubmit={handleSubmit}>
         <FormFields gradeSys={gradeSys} setGradeSys={setGradeSys}/>
-        <button type='submit'>Submit</button>
+        <button type='submit'>Laske</button>
       </Form>
       <Results totalS={totalS} />
     </div>

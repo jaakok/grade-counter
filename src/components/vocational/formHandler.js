@@ -30,11 +30,4 @@ const count = ({data, setTotalS, gradeSys}) => {
   setTotalS(total)
 }
 
-const validate = (data) => {
-  const toValidate = Object.keys(data).map(key => data[key])
-  toValidate.map(obj => {
-    return !!(obj.grade)
-  })
-}
-
-export { count, validate }
+export { count }

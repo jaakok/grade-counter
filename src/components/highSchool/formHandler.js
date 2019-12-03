@@ -18,7 +18,6 @@ const count = ({data, setTotal, title, setTitle}) => {
       .filter(s => s.id === d.name)
 
     //Return score value of found subjects
-    console.log(index)
     const score = match.map(m => {
       return !!(index[0])
       ? m.scores[index[0].index]

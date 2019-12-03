@@ -1,7 +1,7 @@
 const grades = [
   { id: 'L', title: 'L', index: 0},
-  { id: 'M', title: 'M', index: 1},
-  { id: 'E', title: 'E', index: 2},
+  { id: 'E', title: 'E', index: 1},
+  { id: 'M', title: 'M', index: 2},
   { id: 'C', title: 'C', index: 3},
   { id: 'B', title: 'B', index: 4},
   { id: 'A', title: 'A', index: 5}
@@ -10,12 +10,12 @@ const grades = [
 const math = [
   {
     id: 'mathLong',
-    title: 'Pitkä Matematiikka',
+    title: 'Pitkä matematiikka',
     scores: [46, 43, 40, 35, 27, 19]
   },
   {
     id: 'mathShort',
-    title: 'Lyhyt Matematiikka',
+    title: 'Lyhyt m atematiikka',
     scores: [40, 35, 27, 19, 13, 6]
   },
   {
@@ -28,27 +28,27 @@ const math = [
 const forLang = [
   {
     id: 'secondLangLong',
-    title: 'Toinen kotimainen kieli (Pitkä)',
+    title: 'Toinen kotimainen kieli (pitkä)',
     scores: [46, 41, 34, 26, 18, 10]
   },
   {
     id: 'secondLangMed',
-    title: 'Toinen kotimainen kieli (Keskipitkä)',
+    title: 'Toinen kotimainen kieli (keskipitkä)',
     scores: [38, 34, 26, 18, 12, 5]
   },
   {
     id: 'secondLangShort',
-    title: 'Toinen kotimainen kieli (Lyhyt)',
+    title: 'Toinen kotimainen kieli (lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
   },
   {
     id: 'forLangLong',
-    title: 'Vieras kieli (Pitkä)',
+    title: 'Vieras kieli (pitkä)',
     scores: [46, 41, 34, 26, 18, 10]
   },
   {
     id: 'forLangShort',
-    title: 'Vieras kieli (Lyhyt)',
+    title: 'Vieras kieli (lyhyt)',
     scores: [46, 41, 34, 26, 18, 10]
   }
 ]
@@ -106,7 +106,7 @@ const score = [
   },
   {
     id: 'forLang',
-    title: 'Vieras kieli(Pitkä/Lyhyt)',
+    title: 'Vieras kieli(pitkä/lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
   }
 ]
@@ -114,12 +114,12 @@ const score = [
 const totalScores = [
   {
     id: 'mathLong',
-    title: 'Pitkä Matematiikka',
+    title: 'Pitkä matematiikka',
     scores: [46, 43, 40, 35, 27, 19]
   },
   {
     id: 'mathShort',
-    title: 'Lyhyt Matematiikka',
+    title: 'Lyhyt matematiikka',
     scores: [40, 35, 27, 19, 13, 6]
   },
   {
@@ -135,27 +135,27 @@ const totalScores = [
   },
   {
     id: 'secondLangLong',
-    title: 'Toinen kotimainen kieli (Pitkä)',
+    title: 'Toinen kotimainen kieli (pitkä)',
     scores: [46, 41, 34, 26, 18, 10]
   },
   {
     id: 'secondLangMed',
-    title: 'Toinen kotimainen kieli (Keskipitkä)',
+    title: 'Toinen kotimainen kieli (keskipitkä)',
     scores: [38, 34, 26, 18, 12, 5]
   },
   {
     id: 'secondLangShort',
-    title: 'Toinen kotimainen kieli (Lyhyt)',
+    title: 'Toinen kotimainen kieli (lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
   },
   {
     id: 'forLangLong',
-    title: 'Vieras kieli (Pitkä)',
+    title: 'Vieras kieli (pitkä)',
     scores: [46, 41, 34, 26, 18, 10]
   },
   {
     id: 'forLangShort',
-    title: 'Vieras kieli (Lyhyt)',
+    title: 'Vieras kieli (lyhyt)',
     scores: [46, 41, 34, 26, 18, 10]
   },
   {
@@ -210,7 +210,7 @@ const totalScores = [
   },
   {
     id: 'forLang',
-    title: 'Vieras kieli(Pitkä/Lyhyt)',
+    title: 'Vieras kieli(pitkä/lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
   }
 ]

@@ -1,11 +1,10 @@
 import React from 'react'
 
 const Results = ({totalS}) => {
-  console.log(totalS)
   return (
     <div>
-      <h3>Kokonaispisteet</h3>
-      <p>{totalS}</p>
+      <h4>Yhteenveto</h4>
+      <p>Pisteet yhteensä: {totalS}</p>
     </div>
   )
 }
