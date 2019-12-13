@@ -1,9 +1,10 @@
+import React, {useState} from 'react'
 import {commObj, avgObj} from './vocScores'
 
-const count = ({data, setTotalS, gradeSys}) => {
+const count = ({data, setTotalS, gradeSys, titles, setTitles}) => {
 
   //Grade values from form input
-  const inputGrades = [ data.math.grade, data.comm.grade, data.soc.grade ]
+  const inputGrades = [ data.comm.grade, data.math.grade, data.soc.grade ]
 
   //Dynamically switch grading scales
   const grading = gradeSys ? commObj.grade3 : commObj.grade5
@@ -18,6 +19,7 @@ const count = ({data, setTotalS, gradeSys}) => {
 
   //Count values for common subjects
   const commGrades = inputGrades.map(g => grading[g - 1])
+  setTitles(commGrades)
 
   //Reduce table with average values
   //Accumulate when current value is higher or equal to average

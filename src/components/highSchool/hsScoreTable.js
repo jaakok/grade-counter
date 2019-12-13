@@ -15,7 +15,7 @@ const math = [
   },
   {
     id: 'mathShort',
-    title: 'Lyhyt m atematiikka',
+    title: 'Lyhyt matematiikka',
     scores: [40, 35, 27, 19, 13, 6]
   },
   {
@@ -125,7 +125,7 @@ const totalScores = [
   {
     id: 'null',
     title: 'Ei suoritettu',
-    scores: [0]
+    scores: [0, 0, 0, 0, 0, 0]
   },
   {
     id: 'fin',

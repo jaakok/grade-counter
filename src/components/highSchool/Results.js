@@ -4,9 +4,14 @@ const Results = ({totalS, title}) => {
   return (
     <div>
       <h4>Yhteenveto</h4>
-      <p>Pisteet yhteensä: {totalS}</p>
-      {
-        title.map(t => <p>{t}</p>)
+      {title.length > 0
+        ?
+          <div>
+            <p>Pisteet yhteensä: {totalS}</p>
+            <p>Pisteet yksittäisistä aineista:</p>
+          {title.map(t => <p>{t}</p>)}
+          </div>
+        : null
       }
     </div>
   )

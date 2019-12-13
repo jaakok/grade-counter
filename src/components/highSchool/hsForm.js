@@ -5,7 +5,6 @@ import count from './formHandler'
 import {score, grades, math, forLang} from './hsScoreTable'
 
 const FormField = ({props}) => {
-  console.log(props)
   return (
     <>
     <Scope path={props.length}>
@@ -28,18 +27,22 @@ const HSForm = () => {
   const [children, setChildren] = useState([])
   const [totalS, setTotal] = useState('')
   const [title, setTitle] = useState([])
+  const [message, setMessage] = useState('')
 
   const handleSubmit = data => {
 
     console.log('submitted!')
     !!(data.fin.grade)
     ? count({data, setTotal, title, setTitle})
-    : setTotal('Valitse arvosanat')
+    : setMessage('Valitse arvosanat')
+    setTimeout(() => setMessage(''), 1500)
   }
 
   const add = event => {
     event.preventDefault()
-    setChildren([...children, <FormField props={children}/>])
+    //Let user add formfields if less than 2 exist
+    children.length < 2 && setChildren([...children, <FormField props={children}/>])
+    children.length >= 2 && setMessage('Voit lisätä vain kaksi ainereaalia')
   }
 
   const remove = event => {
@@ -49,6 +52,10 @@ const HSForm = () => {
 
   return (
     <div>
+    <p>Valitse arvosana alasvetovalikosta. Ainereaali / vieras kieli
+    -kohdassa voit lisätä korkeintaan kaksi ainetta. Jos olet
+    suorittanut kansainvälisen ylioppilastutkinnon (EB, IB tai RP/DIA),
+    valitse laskuriin arvosanojasi vastaavat suomalaisen ylioppilastutkinnon arvosanat.</p>
       <Form onSubmit={handleSubmit}>
         <Scope path='fin'>
           <label>
@@ -86,13 +93,14 @@ const HSForm = () => {
         </Scope>
         <br/>
 
-        <p>Lisää ainereaaleja</p>
+        <p>Lisää ainereaaleja / vieras kieli</p>
           {children.map(child => child)}
           <button onClick={add}>Lisää aine</button>
           <button onClick={remove}>Poista viimeisin kenttä</button>
         <br/>
         <button type='submit'>Laske</button>
       </Form>
+      <p className="formMessage" style={{display: (message === '') && 'none'}}>{message}</p>
       <Results totalS={totalS} title={title}/>
     </div>
   )

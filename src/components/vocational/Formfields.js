@@ -1,54 +1,64 @@
 import React, { useState } from 'react'
 import { Select, Scope, Input } from '@rocketseat/unform'
 
-const FormFields = ({gradeSys, setGradeSys}) => {
-  const [error, setError] = useState(false)
+const FormFields = ({gradeSys, setGradeSys, message, setMessage}) => {
 
   const grades3 = [
-    {id: '1', title: '1'},
-    {id: '2', title: '2'},
-    {id: '3', title: '3'}
+    {id: 1, title: 1},
+    {id: 2, title: 2},
+    {id: 3, title: 3}
   ]
 
   const grades5 = [
-    {id: '1', title: '1'},
-    {id: '2', title: '2'},
-    {id: '3', title: '3'},
-    {id: '4', title: '4'},
-    {id: '5', title: '5'}
+    {id: 1, title: 1},
+    {id: 2, title: 2},
+    {id: 3, title: 3},
+    {id: 4, title: 4},
+    {id: 5, title: 5}
   ]
 
-  const selectGrading = event => {
+  const setGrading3 = (event) => {
     event.preventDefault()
-    gradeSys
-    ? setGradeSys(false)
-    : setGradeSys(true)
+    setGradeSys(true)
+  }
+
+  const setGrading5 = (event) => {
+    event.preventDefault()
+    setGradeSys(false)
   }
 
   const validateInput = (event) => {
     const regex = /^[a-zA-z]+$/
 
-    if (event.target.value.match(regex)) {
+    const errorMessage = () => {
       event.preventDefault()
-      setError(true)
+      setMessage('Käytä vain numeroita ja pilkkuja')
       setTimeout(() => {
-        setError(false)
+        setMessage('')
       }, 1500)
     }
+    event.target.value.match(regex) && errorMessage()
   }
 
 return (
   <div>
     <p>Valitse ensin arvosana-asteikko klikkaamalla (joko 1-3 tai 1-5)</p>
-    <button onClick={selectGrading}>Arvosana-asteikko: {
-      gradeSys
-        ? '1-3'
-        : '1-5'
-      }
+    <button
+      onClick={setGrading3}
+      disabled={gradeSys === true && true}
+      className={gradeSys === true && "buttonDisable"}>
+        Arvosana-asteikko 1-3
     </button>
+    <button
+      onClick={setGrading5}
+      disabled={gradeSys === false && true}
+      className={gradeSys === false && "buttonDisable"}>
+        Arvosana-asteikko 1-5
+      </button>
     <br/>
     <Scope path='comm'>
       <label>Viestintä- ja vuorovaikutusosaaminen</label>
+      <label>Arvosana</label>
       <Select name='grade' options={
         gradeSys
           ? grades3
@@ -58,6 +68,7 @@ return (
     <br/>
       <Scope path='math'>
         <label>Matemaattis-luonnontieteellinen osaaminen</label>
+        <label>Arvosana</label>
         <Select name='grade' options={
           gradeSys
             ? grades3
@@ -67,6 +78,7 @@ return (
     <br/>
       <Scope path='soc'>
         <label>Yhteiskunta- ja työelämäosaaminen</label>
+        <label>Arvosana</label>
         <Select name='grade' options={
           gradeSys
             ? grades3
@@ -76,9 +88,12 @@ return (
     <br/>
     <Scope path='avg'>
       <label>Tutkinnon painotettu keskiarvo</label>
-      <Input name='avg' type='text' onKeyPress={validateInput}/>
+      <Input
+        name='avg'
+        type='text'
+        onKeyPress={validateInput}/>
     </Scope>
-    <p className={error ? 'error' : null}>{error ? 'Käytä vain numeroita ja pilkkuja' : ''}</p>
+    <p className="formMessage" style={{display: (message === '') && 'none'}}>{message}</p>
     <br />
   </div>
   )
