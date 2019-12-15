@@ -8,7 +8,7 @@ The purpose of the app is to count the possible entry level points for people ap
 
 ### Feel free to fork this app
 
-App is licensed under MIT open source license and can be used by anyone.
+App is licensed under MIT open source license and can be used, modified, and copied by anyone.
 
 
 #### Installation
