@@ -42,7 +42,8 @@ const HSForm = () => {
     event.preventDefault()
     //Let user add formfields if less than 2 exist
     children.length < 2 && setChildren([...children, <FormField props={children}/>])
-    children.length >= 2 && setMessage('Voit lisätä vain kaksi ainereaalia')
+    children.length >= 2 && setMessage('Voit lisätä enintään kaksi ainereaalia')
+    setTimeout(() => setMessage(''), 1500)
   }
 
   const remove = event => {
@@ -93,7 +94,8 @@ const HSForm = () => {
         </Scope>
         <br/>
 
-        <p>Lisää ainereaaleja / vieras kieli</p>
+        <p>Lisää ainereaaleja / vieras kieli<br/>
+            (korkeintaan kaksi)</p>
           {children.map(child => child)}
           <button onClick={add}>Lisää aine</button>
           <button onClick={remove}>Poista viimeisin kenttä</button>

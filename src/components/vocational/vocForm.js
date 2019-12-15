@@ -11,9 +11,10 @@ const Titles = titles => {
   return (
     <div>
       <h5>Pisteet yksittäisistä aineista</h5>
-      <p>Viestintä- ja vuorovaikutusosaaminen {titleArray[0][0]}</p>
-      <p>Matemaattis-luonnontieteellinen osaaminen {titleArray[0][1]}</p>
-      <p>Yhteiskunta- ja työelämäosaaminen {titleArray[0][2]}</p>
+      <p>Viestintä- ja vuorovaikutusosaaminen: {titleArray[0][0]}</p>
+      <p>Matemaattis-luonnontieteellinen osaaminen: {titleArray[0][1]}</p>
+      <p>Yhteiskunta- ja työelämäosaaminen: {titleArray[0][2]}</p>
+      <p>Tutkinnon painotettu keskiarvo: {titleArray[0][3]}</p>
     </div>
   )
 }
@@ -48,8 +49,12 @@ const VocForm = () => {
           setMessage={setMessage}/>
         <button type='submit'>Laske</button>
       </Form>
-      <Results totalS={totalS} />
-      <Titles titles={titles}/>
+      {titles.length > 0 &&
+      <div>
+        <Results totalS={totalS} />
+        <Titles titles={titles}/>
+      </div>
+      }
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Select, Scope, Input } from '@rocketseat/unform'
 
 const FormFields = ({gradeSys, setGradeSys, message, setMessage}) => {
@@ -46,13 +46,13 @@ return (
     <button
       onClick={setGrading3}
       disabled={gradeSys === true && true}
-      className={gradeSys === true && "buttonDisable"}>
+      className={gradeSys === true ? "buttonDisable" : undefined}>
         Arvosana-asteikko 1-3
     </button>
     <button
       onClick={setGrading5}
       disabled={gradeSys === false && true}
-      className={gradeSys === false && "buttonDisable"}>
+      className={gradeSys === false ? "buttonDisable" : undefined}>
         Arvosana-asteikko 1-5
       </button>
     <br/>

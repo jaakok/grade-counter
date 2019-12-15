@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import {commObj, avgObj} from './vocScores'
 
 const count = ({data, setTotalS, gradeSys, titles, setTitles}) => {
@@ -19,7 +18,6 @@ const count = ({data, setTotalS, gradeSys, titles, setTitles}) => {
 
   //Count values for common subjects
   const commGrades = inputGrades.map(g => grading[g - 1])
-  setTitles(commGrades)
 
   //Reduce table with average values
   //Accumulate when current value is higher or equal to average
@@ -29,6 +27,8 @@ const count = ({data, setTotalS, gradeSys, titles, setTitles}) => {
 
   //Use index to pick out score from scores table
   const total = commGrades.reduce((a, b) => a + b, 0) + avgObj.scores[index]
+  commGrades.push(avgObj.scores[index])
+  setTitles(commGrades)
   setTotalS(total)
 }
 
