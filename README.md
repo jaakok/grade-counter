@@ -34,4 +34,7 @@ To deploy this app you need access to ammattikorkeakouluun.fi Wordpress and SSH 
 * Here you can see that the site is actually the `index.html` file of our React build with a slight modification where we get React itself as a `<script>` tag in the head section of the document
 * Now all you have to do is update the file names of the two .js files at the bottom of the document
   * The js files follow the format of `/wp-content/themes/amk/build/static/js/2.b227eb50.chunk.js` so just update the file name to match the ones from the build
-*
+* The HTML Pages plugin generates a shortcode you can embed in any normal Wordpress page, the page that embeds this app can be found on Pages > All Pages > Todistusvalinnan pistelaskuri
+
+### Swedish translation
+A Swedish translation of this app exists in [link](https://duck.com), to deploy this app follow the steps above but make sure to change the language to Swedish at the top of the Wordpress admin panel, the HTML Page for this is named `pistelaskuri-se` and the Wordpress page is <title>
