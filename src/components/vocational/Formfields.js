@@ -37,7 +37,7 @@ const FormFields = ({gradeSys, setGradeSys, message, setMessage}) => {
         setMessage('')
       }, 1500)
     }
-    event.target.value.match(regex) && errorMessage()
+    (event.target.value.match(regex) || event.target.value > 3) && errorMessage()
   }
 
 return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form } from '@rocketseat/unform'
 import FormFields from './Formfields'
 import { count } from './formHandler'
-import Results from '../Results'
+import Results from './Results'
 
 //Create a summary of grades
 const Titles = titles => {

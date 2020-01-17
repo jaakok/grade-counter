@@ -210,7 +210,7 @@ const totalScores = [
   },
   {
     id: 'forLang',
-    title: 'Vieras kieli(pitkä/lyhyt)',
+    title: 'Vieras kieli (pitkä/lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
   }
 ]
