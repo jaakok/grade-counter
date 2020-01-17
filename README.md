@@ -23,7 +23,7 @@ And see it in action with `npm start`
 All form elements are rendered using [Unform](https://github.com/Rocketseat/unform) library. The two different main components `vocForm.js` and `hsForm.js` work as the main entry points. The components' computational logic is located in `formHandler.js` in their respective folders and both forms have a separate file for scores. Navigation between the two forms is done with [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 
 #### Deployment to ammattikorkeakouluun.fi
-The deployment of this app is a bit quirky because the nature essentially needs to be embedded in a website and this solution seemed to be the fastest way at the time of creating the app.
+The deployment of this app is a bit quirky because the app essentially needs to be embedded in a website and this solution seemed to be the fastest way at the time of creating the app.
 
 To deploy this app you need access to ammattikorkeakouluun.fi Wordpress and SSH connection to Metropolia's servers.
 
