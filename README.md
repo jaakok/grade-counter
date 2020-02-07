@@ -37,4 +37,4 @@ To deploy this app you need access to ammattikorkeakouluun.fi Wordpress and SSH 
 * The HTML Pages plugin generates a shortcode you can embed in any normal Wordpress page, the page that embeds this app can be found on Pages > All Pages > Todistusvalinnan pistelaskuri
 
 ### Swedish translation
-A Swedish translation of this app exists in [link](https://duck.com), to deploy this app follow the steps above but make sure to change the language to Swedish at the top of the Wordpress admin panel, the HTML Page for this is named `pistelaskuri-se` and the Wordpress page is <title>
+A Swedish translation of this app exists [here](https://github.com/lollyyy/grade-counter-se), to deploy this app follow the steps above but copy the build folder inside `/home/ammattikorkeakouluun/public_html/wp-content/themes/amk/gc-swe`. Make sure to change the language to Swedish at the top of the Wordpress admin panel, the HTML Page for this is named `pistelaskuri-se` and the Wordpress page is "Poängräknare för den betygsbaserade antagningen"

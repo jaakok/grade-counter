@@ -37,8 +37,25 @@ const FormFields = ({gradeSys, setGradeSys, message, setMessage}) => {
         setMessage('')
       }, 1500)
     }
-    (event.target.value.match(regex) || event.target.value > 3) && errorMessage()
+
+    const numError = () => {
+      event.preventDefault()
+      setMessage(gradeSys === true ? 'Keskiarvo ei voi olla yli 3' : 'Keskiarvo ei voi olla yli 5')
+      setTimeout(() => {
+        setMessage('')
+      }, 1500)
+    }
+
+    //Show error message if user types in letters
+    event.target.value.match(regex) && errorMessage()
+
+    //Show error message if user types in numbers over the selected range
+    gradeSys === true
+    ? event.target.value > 3 && numError()
+    : event.target.value > 5 && numError()
+
   }
+
 
 return (
   <div>
