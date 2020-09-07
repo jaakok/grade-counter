@@ -42,6 +42,11 @@ const forLang = [
     scores: [46, 41, 34, 26, 18, 10]
   },
   {
+  id: 'forLangMedium',
+    title: 'Vieras kieli (keskipitkä)',
+    scores: [38, 34, 26, 18, 12, 5]
+  },
+  {
     id: 'forLangShort',
     title: 'Vieras kieli (lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
@@ -101,7 +106,7 @@ const score = [
   },
   {
     id: 'forLang',
-    title: 'Vieras kieli (pitkä/lyhyt)',
+    title: 'Vieras kieli (pitkä/keskipitkä/lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
   }
 ]
@@ -142,6 +147,11 @@ const totalScores = [
     id: 'forLangLong',
     title: 'Vieras kieli (pitkä)',
     scores: [46, 41, 34, 26, 18, 10]
+  },
+  {
+    id: 'forLangMedium',
+      title: 'Vieras kieli (keskipitkä)',
+      scores: [38, 34, 26, 18, 12, 5]
   },
   {
     id: 'forLangShort',
@@ -200,7 +210,7 @@ const totalScores = [
   },
   {
     id: 'forLang',
-    title: 'Vieras kieli (pitkä/lyhyt)',
+    title: 'Vieras kieli (pitkä/keskipitkä/lyhyt)',
     scores: [30, 27, 21, 15, 9, 3]
   }
 ]
